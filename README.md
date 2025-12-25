@@ -1,5 +1,8 @@
 # NeuroSovereign v15.4: Aggressive Hierarchical Shock & Mask Warmup for Plasticity-Guided Architecture Search
 
+<img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/d75409ce-4a9b-436c-8b0b-3ccfb0888555" />
+
+
 grisun0¹, Independent Research Frontier
 ¹Neurocomputational Architecture Lab (GitHub: @grisuno)
 
