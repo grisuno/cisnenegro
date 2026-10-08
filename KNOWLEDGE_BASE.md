@@ -11,7 +11,7 @@
 
 **Total Files Parsed:** 37 | **Total Symbols Extracted:** 1059 | **Total Imports:** 418
 
-<!-- ranking_model: v1.0 | weights: {ppr:0.45,auth:0.2,test:0.15,doc:0.1,fresh:0.1} | alpha:0.85 | commit:1e0fd0b | date:2026-07-18 -->
+<!-- ranking_model: v1.0 | weights: {ppr:0.45,auth:0.2,test:0.15,doc:0.1,fresh:0.1} | alpha:0.85 | commit:05a4468 | date:2026-07-18 -->
 
 
 ## Table of Contents
@@ -24,13 +24,12 @@
 6. [Hotspot Analysis](#hotspot-analysis)
 7. [Change Impact Analysis](#change-impact-analysis)
 8. [Suggested Linting Rules](#suggested-linting-rules)
-9. [Concept Graph](#concept-graph)
-10. [Orphans](#orphans)
-11. [Query Recipes](#query-recipes)
-12. [Structural Knowledge Map](#structural-knowledge-map)
-13. [UML Class Diagram](#uml-class-diagram)
-14. [Code Property Graph](#code-property-graph)
-15. [Architecture Reference](#architecture-reference)
+9. [Orphans](#orphans)
+10. [Query Recipes](#query-recipes)
+11. [Structural Knowledge Map](#structural-knowledge-map)
+12. [UML Class Diagram](#uml-class-diagram)
+13. [Code Property Graph](#code-property-graph)
+14. [Architecture Reference](#architecture-reference)
     - [PY (36 files)](#py-36-files)
     - [SH (1 files)](#sh-1-files)
 
@@ -166,60 +165,6 @@ Files ranked by combined complexity (symbol count) and centrality (connection co
 | `apex34.py` | 0.957 | 0.875 | 0.908 | 45 | 14 |
 | `apex35.py` | 0.617 | 0.875 | 0.772 | 29 | 14 |
 | `resmav2_1.py` | 0.383 | 1.000 | 0.753 | 18 | 16 |
-
----
-
-## Concept Graph
-
-Semantic second-brain layer: nouns are concept nodes, verbs are edges. Each noun maps atomically to a file set (EXTRACTED); each verb aggregates structural imports, calls, and inherits into consumes, invokes, extends, depends_on, or bridges (INFERRED).
-
-**50 concepts, 0 relations.**
-
-| Concept | Files | Mentions |
-|---------|-------|----------|
-| `forward` | 36 | 99 |
-| `train` | 36 | 43 |
-| `apply` | 35 | 55 |
-| `monitor` | 35 | 48 |
-| `sovereign` | 35 | 37 |
-| `neuro` | 35 | 35 |
-| `mlp` | 34 | 49 |
-| `spectral` | 33 | 136 |
-| `compute` | 33 | 84 |
-| `get` | 28 | 62 |
-| `sparsity` | 28 | 39 |
-| `trainer` | 28 | 28 |
-| `feature` | 27 | 38 |
-| `patch` | 27 | 37 |
-| `extractor` | 27 | 34 |
-| `masks` | 27 | 31 |
-| `freeze` | 27 | 30 |
-| `unfreeze` | 27 | 30 |
-| `mixer` | 26 | 88 |
-| `token` | 26 | 42 |
-| `metrics` | 26 | 32 |
-| `dataset` | 26 | 31 |
-| `objective` | 24 | 30 |
-| `only` | 22 | 34 |
-| `curriculum` | 22 | 25 |
-| `gated` | 22 | 24 |
-| `taxonomic` | 21 | 47 |
-| `run` | 21 | 35 |
-| `loss` | 21 | 25 |
-| `model` | 19 | 56 |
-
-### Dialectic Prompts
-
-- Thesis: `apply` centralizes 35 files; Antithesis: `batch` pulls 18 files with 18 shared (Jaccard 0.51); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `benchmark` pulls 18 files with 18 shared (Jaccard 0.51); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `chain` pulls 16 files with 16 shared (Jaccard 0.46); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `cifar100` pulls 18 files with 18 shared (Jaccard 0.51); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `coarse` pulls 19 files with 19 shared (Jaccard 0.54); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `compute` pulls 33 files with 33 shared (Jaccard 0.94); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `control` pulls 14 files with 14 shared (Jaccard 0.40); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `create` pulls 16 files with 16 shared (Jaccard 0.46); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `curriculum` pulls 22 files with 22 shared (Jaccard 0.63); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
-- Thesis: `apply` centralizes 35 files; Antithesis: `dataset` pulls 26 files with 26 shared (Jaccard 0.74); Synthesis: should they merge, split by layer, or keep `bridges` explicit?
 
 ---
 
