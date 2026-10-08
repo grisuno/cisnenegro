@@ -1,0 +1,500 @@
+# API (page 1 of 2)
+Pages: [API.md](API.md), [API_p2.md](API_p2.md)
+
+## apex14.py
+- `GatedTokenMixer.__init__` (method) `apex14.py:37` `def __init__(self, num_tokens, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex14.py:54` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex14.py:72` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex14.py:89` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze` (method) `apex14.py:93` `def unfreeze(self)`
+- `PatchFeatureExtractor.forward` (method) `apex14.py:97` `def forward(self, x)`
+- `LotteryMLP.__init__` (method) `apex14.py:112` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `LotteryMLP.apply_masks` (method) `apex14.py:123` `def apply_masks(self)`
+- `LotteryMLP.get_sparsity` (method) `apex14.py:128` `def get_sparsity(self)`
+- `LotteryMLP.forward` (method) `apex14.py:133` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex14.py:143` `def compute_metrics(self, weight)`
+- `OrthogonalEvolutionEngine.__init__` (method) `apex14.py:159` `def __init__(self, device)`
+- `OrthogonalEvolutionEngine.create_refined_offspring` (method) `apex14.py:217` `def create_refined_offspring(self, elk_state, data_loader, feature_extractor)`
+- `HierarchicalTrainer.__init__` (method) `apex14.py:232` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `HierarchicalTrainer.get_curriculum_dataset` (method) `apex14.py:244` `def get_curriculum_dataset(self, cycle)`
+- `HierarchicalTrainer.train_single_chain` (method) `apex14.py:250` `def train_single_chain(self, model, cycle, chain_type)`
+- `HierarchicalTrainer.main` (method) `apex14.py:336` `def main()`
+
+## apex15.py
+- `compute_spectral_loss` (function) `apex15.py:63` `def compute_spectral_loss(W, target_rank_factor)` -- Penaliza la desalineación entre Entropía Espectral y Rango Efectivo.
+- `GatedTokenMixer.__init__` (method) `apex15.py:89` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex15.py:98` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex15.py:106` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex15.py:121` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex15.py:125` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex15.py:131` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex15.py:144` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex15.py:158` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex15.py:164` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex15.py:169` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex15.py:180` `def compute_metrics(self, weight)`
+- `TaxonomicTrainer.__init__` (method) `apex15.py:196` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex15.py:207` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex15.py:213` `def train_single_chain(self, model, cycle, chain_type)`
+- `TaxonomicTrainer.main` (method) `apex15.py:367` `def main()`
+
+## apex16.py
+- `compute_spectral_loss` (function) `apex16.py:63` `def compute_spectral_loss(W, target_rank_factor)` -- Penaliza la desalineación entre Entropía Espectral y Rango Efectivo. v14.5: Se aplicará a pesos del MLP y del Mixer.
+- `GatedTokenMixer.__init__` (method) `apex16.py:83` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex16.py:92` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex16.py:100` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex16.py:115` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex16.py:119` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex16.py:125` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex16.py:138` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex16.py:152` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex16.py:158` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex16.py:163` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex16.py:174` `def compute_metrics(self, weight)`
+- `TaxonomicTrainer.__init__` (method) `apex16.py:190` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex16.py:201` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex16.py:207` `def train_single_chain(self, model, cycle, chain_type)`
+- `TaxonomicTrainer.main` (method) `apex16.py:377` `def main()`
+
+## apex17.py
+- `compute_spectral_loss` (function) `apex17.py:65` `def compute_spectral_loss(W)` -- v15.0: Optimization Objective for Spectral Control.
+- `GatedTokenMixer.__init__` (method) `apex17.py:82` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex17.py:91` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex17.py:99` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex17.py:114` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex17.py:118` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex17.py:124` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex17.py:137` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex17.py:151` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex17.py:157` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex17.py:162` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex17.py:173` `def compute_metrics(self, weight)` -- L_mon: Used for plotting and historical reporting, not optimization.
+- `TaxonomicTrainer.__init__` (method) `apex17.py:191` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex17.py:202` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex17.py:208` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex17.py:378` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex17.py:391` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex17.py:428` `def main()`
+
+## apex18.py
+- `compute_spectral_loss` (function) `apex18.py:65` `def compute_spectral_loss(W)` -- v15.1: Optimization Objective for Spectral Control (Applied to both APEX and BLIND).
+- `GatedTokenMixer.__init__` (method) `apex18.py:82` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex18.py:91` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex18.py:99` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex18.py:114` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex18.py:118` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex18.py:124` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex18.py:137` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex18.py:151` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex18.py:157` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex18.py:162` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex18.py:173` `def compute_metrics(self, weight)`
+- `TaxonomicTrainer.__init__` (method) `apex18.py:189` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex18.py:200` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex18.py:206` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex18.py:374` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex18.py:386` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex18.py:420` `def main()`
+
+## apex19.py
+- `compute_spectral_loss` (function) `apex19.py:68` `def compute_spectral_loss(W)` -- L_opt: Optimization Objective for Structural Control.
+- `GatedTokenMixer.__init__` (method) `apex19.py:85` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex19.py:94` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex19.py:102` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex19.py:117` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex19.py:121` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex19.py:127` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex19.py:140` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex19.py:154` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex19.py:160` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex19.py:165` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex19.py:176` `def compute_metrics(self, weight)`
+- `SpectralMonitor.compute_topology_ratio` (method) `apex19.py:188` `def compute_topology_ratio(self, model, extractor, chain_type)` -- v15.2: Calcula el ratio R = L_opt / L_mon.
+- `TaxonomicTrainer.__init__` (method) `apex19.py:212` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex19.py:223` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex19.py:229` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex19.py:399` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex19.py:411` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex19.py:445` `def main()`
+
+## apex20.py
+- `compute_spectral_loss` (function) `apex20.py:69` `def compute_spectral_loss(W)` -- L_opt: Optimization Objective for Structural Control.
+- `GatedTokenMixer.__init__` (method) `apex20.py:86` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex20.py:95` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex20.py:103` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex20.py:118` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex20.py:122` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex20.py:128` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex20.py:141` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex20.py:155` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex20.py:161` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex20.py:166` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex20.py:177` `def compute_metrics(self, weight)`
+- `SpectralMonitor.detect_phase_state` (method) `apex20.py:190` `def detect_phase_state(self, ratio_history)` -- v15.3: Detects phase state based on relative deviation, not absolute value.
+- `SpectralMonitor.compute_topology_ratio` (method) `apex20.py:216` `def compute_topology_ratio(self, model, extractor, chain_type)` -- v15.3: Returns L_opt components and Total Ratio.
+- `TaxonomicTrainer.__init__` (method) `apex20.py:243` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex20.py:254` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex20.py:260` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex20.py:431` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex20.py:443` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex20.py:490` `def main()`
+
+## apex21.py
+- `compute_spectral_loss` (function) `apex21.py:73` `def compute_spectral_loss(W)`
+- `GatedTokenMixer.__init__` (method) `apex21.py:89` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex21.py:98` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex21.py:106` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex21.py:121` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex21.py:125` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex21.py:131` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex21.py:144` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex21.py:158` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex21.py:164` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex21.py:169` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex21.py:180` `def compute_metrics(self, weight)`
+- `SpectralMonitor.detect_phase_state` (method) `apex21.py:192` `def detect_phase_state(self, ratio_history)`
+- `SpectralMonitor.compute_topology_ratio` (method) `apex21.py:204` `def compute_topology_ratio(self, model, extractor, chain_type)` -- v15.3: Returns L_opt components and Total Ratio.
+- `TopologyController.__init__` (method) `apex21.py:230` `def __init__(self)`
+- `TopologyController.check_intervention` (method) `apex21.py:233` `def check_intervention(self, phase_state, coarse_acc, extractor)` -- Decides whether to intervene.
+- `TopologyController.perturb_mixer` (method) `apex21.py:255` `def perturb_mixer(self, extractor)` -- Causal Intervention: Inject topological noise to force phase shift.
+- `TaxonomicTrainer.__init__` (method) `apex21.py:271` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex21.py:283` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex21.py:289` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex21.py:464` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex21.py:476` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex21.py:513` `def main()`
+
+## apex22.py
+- `compute_spectral_loss` (function) `apex22.py:73` `def compute_spectral_loss(W)`
+- `GatedTokenMixer.__init__` (method) `apex22.py:89` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex22.py:98` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex22.py:106` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex22.py:121` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex22.py:125` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex22.py:131` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex22.py:144` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex22.py:158` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex22.py:164` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex22.py:169` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex22.py:180` `def compute_metrics(self, weight)`
+- `SpectralMonitor.detect_phase_state` (method) `apex22.py:192` `def detect_phase_state(self, ratio_history)`
+- `TopologyController.__init__` (method) `apex22.py:206` `def __init__(self)`
+- `TopologyController.check_intervention` (method) `apex22.py:209` `def check_intervention(self, phase_state, coarse_acc, extractor)`
+- `TopologyController.perturb_mixer_targeted` (method) `apex22.py:226` `def perturb_mixer_targeted(self, extractor)` -- v15.5: Targeted Phase Surgery.
+- `TaxonomicTrainer.__init__` (method) `apex22.py:274` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex22.py:286` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex22.py:292` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex22.py:464` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex22.py:476` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex22.py:513` `def main()`
+
+## apex23.py
+- `compute_spectral_loss` (function) `apex23.py:74` `def compute_spectral_loss(W)` -- L_opt: Computes the discrepancy between spectral entropy and effective rank.
+- `GatedTokenMixer.__init__` (method) `apex23.py:92` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex23.py:101` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex23.py:109` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex23.py:124` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex23.py:128` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex23.py:134` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex23.py:147` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex23.py:161` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex23.py:167` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex23.py:172` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex23.py:183` `def compute_metrics(self, weight)` -- L_mon: Legacy reporting metric.
+- `SpectralMonitor.detect_phase_state` (method) `apex23.py:196` `def detect_phase_state(self, ratio_history)`
+- `SpectralMonitor.compute_topology_ratio` (method) `apex23.py:208` `def compute_topology_ratio(self, model, extractor, chain_type)` -- Calculates Topo_R = L_opt / L_mon.
+- `TopologyController.__init__` (method) `apex23.py:229` `def __init__(self)`
+- `TopologyController.check_intervention` (method) `apex23.py:232` `def check_intervention(self, phase_state, coarse_acc, extractor)` -- Decides if intervention is needed based on Phase and Performance.
+- `TopologyController.perturb_mixer_targeted` (method) `apex23.py:250` `def perturb_mixer_targeted(self, extractor)` -- v15.5: Targeted Spectral Surgery.
+- `TaxonomicTrainer.__init__` (method) `apex23.py:307` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex23.py:319` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex23.py:325` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex23.py:498` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex23.py:510` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex23.py:544` `def main()`
+
+## apex24.py
+- `compute_spectral_loss` (function) `apex24.py:75` `def compute_spectral_loss(W)` -- L_opt: Computes the discrepancy between spectral entropy and effective rank.
+- `GatedTokenMixer.__init__` (method) `apex24.py:93` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex24.py:102` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex24.py:110` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex24.py:125` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex24.py:129` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex24.py:135` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex24.py:148` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex24.py:162` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex24.py:168` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex24.py:173` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex24.py:184` `def compute_metrics(self, weight)` -- L_mon: Legacy reporting metric.
+- `SpectralMonitor.detect_phase_state` (method) `apex24.py:197` `def detect_phase_state(self, ratio_history)`
+- `SpectralMonitor.compute_topology_ratio` (method) `apex24.py:209` `def compute_topology_ratio(self, model, extractor, chain_type)` -- Calculates Topo_R = L_opt / L_mon.
+- `TopologyController.__init__` (method) `apex24.py:230` `def __init__(self)`
+- `TopologyController.check_intervention` (method) `apex24.py:235` `def check_intervention(self, phase_state, coarse_acc, extractor, current_topo_r)` -- v15.5 Final: Geometric Mismatch Detection.
+- `TopologyController.perturb_mixer_targeted` (method) `apex24.py:284` `def perturb_mixer_targeted(self, extractor)` -- v15.5: Targeted Spectral Surgery.
+- `TaxonomicTrainer.__init__` (method) `apex24.py:340` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex24.py:352` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex24.py:358` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex24.py:532` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex24.py:544` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex24.py:578` `def main()`
+
+## apex25.py
+- `compute_spectral_loss` (function) `apex25.py:75` `def compute_spectral_loss(W)` -- L_opt: Computes the discrepancy between spectral entropy and effective rank.
+- `GatedTokenMixer.__init__` (method) `apex25.py:90` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex25.py:99` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex25.py:107` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex25.py:122` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex25.py:126` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex25.py:132` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex25.py:145` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex25.py:159` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex25.py:165` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex25.py:170` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex25.py:181` `def compute_metrics(self, weight)` -- L_mon: Legacy reporting metric.
+- `SpectralMonitor.detect_phase_state` (method) `apex25.py:194` `def detect_phase_state(self, ratio_history)`
+- `SpectralMonitor.compute_topology_ratio` (method) `apex25.py:206` `def compute_topology_ratio(self, model, extractor, chain_type)` -- Calculates Topo_R = L_opt / L_mon.
+- `TopologyController.__init__` (method) `apex25.py:225` `def __init__(self)`
+- `TopologyController.check_intervention` (method) `apex25.py:230` `def check_intervention(self, phase_state, coarse_acc, extractor, current_topo_r)` -- v15.5 Final: Geometric Mismatch Detection.
+- `TopologyController.perturb_mixer_targeted` (method) `apex25.py:277` `def perturb_mixer_targeted(self, extractor)` -- v15.5: Targeted Spectral Surgery.
+- `TaxonomicTrainer.__init__` (method) `apex25.py:317` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex25.py:329` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex25.py:335` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex25.py:509` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex25.py:521` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex25.py:555` `def main()`
+
+## apex26.py
+- `set_seed` (function) `apex26.py:43` `def set_seed(seed)` -- Ensure full reproducibility across runs
+- `GatedTokenMixer.__init__` (method) `apex26.py:91` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex26.py:128` `def forward(self, x)` -- Input:  [B, num_patches, embed_dim] Output: [B, num_patches, embed_dim]
+- `PatchFeatureExtractor.__init__` (method) `apex26.py:148` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex26.py:177` `def freeze(self)` -- Freeze all parameters for transfer learning
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex26.py:183` `def unfreeze_mixer_only(self)` -- Unfreeze only the mixer parameters for fine-tuning
+- `PatchFeatureExtractor.forward` (method) `apex26.py:190` `def forward(self, x)` -- Input:  [B, C, H, W] Output: [B, embed_dim]
+- `TaxonomicMLP.__init__` (method) `apex26.py:209` `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+- `TaxonomicMLP.apply_masks` (method) `apex26.py:232` `def apply_masks(self)` -- Apply sparsity masks to weights
+- `TaxonomicMLP.get_sparsity` (method) `apex26.py:239` `def get_sparsity(self)` -- Calculate overall sparsity percentage
+- `TaxonomicMLP.forward` (method) `apex26.py:245` `def forward(self, x)` -- Input:  [B, input_dim] Output: ([B, num_classes], [B, num_superclasses])
+- `TaxonomicMLP.compute_spectral_loss` (method) `apex26.py:265` `def compute_spectral_loss(W)` -- Optimization Objective for Spectral Control (L_opt)
+- `SpectralMonitor.__init__` (method) `apex26.py:283` `def __init__(self, epsilon)`
+- `SpectralMonitor.compute_metrics` (method) `apex26.py:286` `def compute_metrics(self, weight)` -- Compute spectral coherence metrics
+- `TopologyController.__init__` (method) `apex26.py:304` `def __init__(self, target_coarse_v, stagnation_limit, mixer_noise_scale, dominant_energy_threshold)`
+- `TopologyController.detect_phase_state` (method) `apex26.py:314` `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)` -- Detect phase state based on topology ratio history
+- `TopologyController.check_intervention` (method) `apex26.py:332` `def check_intervention(self, phase_state, coarse_acc, extractor, current_topo_r, geo_window)` -- Check if intervention is needed based on geometric mismatch detection
+- `TopologyController.perturb_mixer_targeted` (method) `apex26.py:377` `def perturb_mixer_targeted(self, extractor)` -- Targeted Spectral Surgery: Inject noise in the nullspace of dominant subspace
+- `EvolutionaryEngine.__init__` (method) `apex26.py:412` `def __init__(self, device, target_L)`
+- `EvolutionaryEngine.apply_rank_capping` (method) `apex26.py:417` `def apply_rank_capping(self, model, layer_name, keep_ratio)` -- Apply rank capping shock to prevent over-specialization
+- `EvolutionaryEngine.create_offspring` (method) `apex26.py:434` `def create_offspring(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)` -- Create refined offspring through gradient-based inheritance
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex26.py:490` `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)` -- Run hierarchy stress test to validate inductive bias transfer
+- `CoarseCIFAR100.evaluate` (method) `apex26.py:503` `def evaluate(model, extractor, name)`
+- `EvolutionaryTrainer.__init__` (method) `apex26.py:546` `def __init__(self, device, output_dir)`
+- `EvolutionaryTrainer.load_data` (method) `apex26.py:572` `def load_data(self, cycle, batch_size)` -- Load curriculum dataset based on evolutionary cycle
+- `EvolutionaryTrainer.train_model` (method) `apex26.py:614` `def train_model(self, model, cycle, chain_type, feature_extractor)` -- Train model with evolutionary pressure and hierarchical learning
+- `EvolutionaryTrainer.compute_topology_ratio` (method) `apex26.py:837` `def compute_topology_ratio(self, model, extractor, chain_type)` -- Calculates Topo_R = L_opt / L_mon.
+- `EvolutionaryTrainer.run_evolution` (method) `apex26.py:855` `def run_evolution(self, num_iterations, num_seeds, early_stop_patience)` -- Run full evolutionary experiment with statistical validation
+- `EvolutionaryTrainer.parse_args` (method) `apex26.py:1170` `def parse_args()`
+- `EvolutionaryTrainer.main` (method) `apex26.py:1181` `def main()` -- Main execution function
+
+## apex27.py
+- `set_seed` (function) `apex27.py:38` `def set_seed(seed)` -- Ensure full reproducibility across runs
+- `GatedTokenMixer.__init__` (method) `apex27.py:85` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex27.py:116` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex27.py:126` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex27.py:151` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex27.py:156` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex27.py:162` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex27.py:172` `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+- `TaxonomicMLP.apply_masks` (method) `apex27.py:192` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex27.py:198` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex27.py:203` `def forward(self, x)`
+- `TaxonomicMLP.compute_spectral_loss` (method) `apex27.py:217` `def compute_spectral_loss(W)` -- Optimization Objective for Spectral Control (L_opt)
+- `DynamicThresholdController.__init__` (method) `apex27.py:238` `def __init__(self, window_size, percentile_trigger)`
+- `DynamicThresholdController.update` (method) `apex27.py:243` `def update(self, value)`
+- `DynamicThresholdController.is_stagnant` (method) `apex27.py:246` `def is_stagnant(self, current_val)`
+- `SpectralMonitor.__init__` (method) `apex27.py:257` `def __init__(self, epsilon)`
+- `SpectralMonitor.compute_metrics` (method) `apex27.py:260` `def compute_metrics(self, weight)`
+- `TopologyController.__init__` (method) `apex27.py:280` `def __init__(self, dynamic_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold, enable_surgery)`
+- `TopologyController.check_intervention` (method) `apex27.py:291` `def check_intervention(self, coarse_acc, extractor, current_topo_r, geo_window, alpha)`
+- `TopologyController.perturb_mixer_targeted` (method) `apex27.py:336` `def perturb_mixer_targeted(self, extractor)` -- Targeted Spectral Surgery: Inject noise in the nullspace of dominant subspace
+- `IterativeRefinementEngine.__init__` (method) `apex27.py:371` `def __init__(self, device)`
+- `IterativeRefinementEngine.create_offspring` (method) `apex27.py:374` `def create_offspring(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)` -- Create refined offspring through gradient-based inheritance
+- `IterativeTrainer.__init__` (method) `apex27.py:418` `def __init__(self, device, output_dir, enable_surgery, enable_taxonomy)`
+- `IterativeTrainer.load_data` (method) `apex27.py:441` `def load_data(self, cycle, batch_size)`
+- `IterativeTrainer.train_model` (method) `apex27.py:479` `def train_model(self, model, cycle, chain_type, feature_extractor)`
+- `IterativeTrainer.compute_topology_ratio` (method) `apex27.py:683` `def compute_topology_ratio(self, model, extractor, chain_type)`
+- `IterativeTrainer.run_refinement` (method) `apex27.py:696` `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+- `IterativeTrainer.parse_args` (method) `apex27.py:900` `def parse_args()`
+- `IterativeTrainer.main` (method) `apex27.py:914` `def main()`
+
+## apex28.py
+- `set_seed` (function) `apex28.py:47` `def set_seed(seed)` -- Ensure full reproducibility across runs
+- `GatedTokenMixer.__init__` (method) `apex28.py:95` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex28.py:132` `def forward(self, x)` -- Input:  [B, num_patches, embed_dim] Output: [B, num_patches, embed_dim]
+- `PatchFeatureExtractor.__init__` (method) `apex28.py:152` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex28.py:181` `def freeze(self)` -- Freeze all parameters for transfer learning
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex28.py:187` `def unfreeze_mixer_only(self)` -- Unfreeze only the mixer parameters for fine-tuning
+- `PatchFeatureExtractor.forward` (method) `apex28.py:194` `def forward(self, x)` -- Input:  [B, C, H, W] Output: [B, embed_dim]
+- `TaxonomicMLP.__init__` (method) `apex28.py:213` `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+- `TaxonomicMLP.apply_masks` (method) `apex28.py:236` `def apply_masks(self)` -- Apply sparsity masks to weights
+- `TaxonomicMLP.get_sparsity` (method) `apex28.py:243` `def get_sparsity(self)` -- Calculate overall sparsity percentage
+- `TaxonomicMLP.forward` (method) `apex28.py:249` `def forward(self, x)` -- Input:  [B, input_dim] Output: ([B, num_classes], [B, num_superclasses])
+- `TaxonomicMLP.compute_spectral_loss` (method) `apex28.py:269` `def compute_spectral_loss(W)` -- Optimization Objective for Spectral Control (L_opt)
+- `SpectralMonitor.__init__` (method) `apex28.py:287` `def __init__(self, epsilon)`
+- `SpectralMonitor.compute_metrics` (method) `apex28.py:290` `def compute_metrics(self, weight)` -- Compute spectral coherence metrics
+- `SpectralMonitor.get_singular_values` (method) `apex28.py:306` `def get_singular_values(self, weight)` -- Get singular values for visualization
+- `AdaptiveTopologyController.__init__` (method) `apex28.py:318` `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+- `AdaptiveTopologyController.compute_semantic_plasticity_ratio` (method) `apex28.py:330` `def compute_semantic_plasticity_ratio(self)` -- Compute ratio of semantic gain to structural change
+- `AdaptiveTopologyController.detect_intervention_need` (method) `apex28.py:343` `def detect_intervention_need(self, phase_state, extractor)` -- Determine if intervention is needed using adaptive criteria
+- `AdaptiveTopologyController.update_history` (method) `apex28.py:365` `def update_history(self, topo_ratio, coarse_acc)` -- Update history for adaptive control
+- `AdaptiveTopologyController.perturb_mixer_targeted` (method) `apex28.py:382` `def perturb_mixer_targeted(self, extractor)` -- Targeted Spectral Surgery: Inject noise in the nullspace of dominant subspace
+- `IterativeRefinementEngine.__init__` (method) `apex28.py:417` `def __init__(self, device)`
+- `IterativeRefinementEngine.apply_rank_capping` (method) `apex28.py:421` `def apply_rank_capping(self, model, layer_name, keep_ratio)` -- Apply rank capping shock to prevent over-specialization
+- `IterativeRefinementEngine.create_refined_model` (method) `apex28.py:438` `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)` -- Create refined model through gradient-based inheritance
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex28.py:494` `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)` -- Run hierarchy stress test to validate inductive bias transfer
+- `CoarseCIFAR100.evaluate` (method) `apex28.py:507` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.visualize_singular_values` (method) `apex28.py:548` `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...` -- Generate publication-quality singular value visualizations
+- `CoarseCIFAR100.get_singular_values` (method) `apex28.py:556` `def get_singular_values(model, extractor, name)` -- Get singular values from model weights
+- `IterativeRefinementTrainer.__init__` (method) `apex28.py:613` `def __init__(self, device, output_dir)`
+- `IterativeRefinementTrainer.load_data` (method) `apex28.py:639` `def load_data(self, cycle, batch_size)` -- Load curriculum dataset based on refinement cycle
+- `IterativeRefinementTrainer.train_model` (method) `apex28.py:681` `def train_model(self, model, cycle, chain_type, feature_extractor)` -- Train model with iterative refinement and hierarchical learning
+- `IterativeRefinementTrainer.detect_phase_state` (method) `apex28.py:908` `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)` -- Detect phase state based on topology ratio history
+- `IterativeRefinementTrainer.compute_topology_ratio` (method) `apex28.py:926` `def compute_topology_ratio(self, model, extractor, chain_type)` -- Calculates Topo_R = L_opt / L_mon.
+- `IterativeRefinementTrainer.run_refinement` (method) `apex28.py:944` `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)` -- Run full iterative refinement experiment with statistical validation
+- `IterativeRefinementTrainer.parse_args` (method) `apex28.py:1270` `def parse_args()`
+- `IterativeRefinementTrainer.main` (method) `apex28.py:1282` `def main()` -- Main execution function
+
+## apex29.py
+- `set_seed` (function) `apex29.py:43` `def set_seed(seed)` -- Ensure full reproducibility across runs
+- `GatedTokenMixer.__init__` (method) `apex29.py:88` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex29.py:125` `def forward(self, x)` -- Input:  [B, num_patches, embed_dim] Output: [B, num_patches, embed_dim]
+- `PatchFeatureExtractor.__init__` (method) `apex29.py:145` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex29.py:174` `def freeze(self)` -- Freeze all parameters for transfer learning
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex29.py:180` `def unfreeze_mixer_only(self)` -- Unfreeze only the mixer parameters for fine-tuning
+- `PatchFeatureExtractor.forward` (method) `apex29.py:187` `def forward(self, x)` -- Input:  [B, C, H, W] Output: [B, embed_dim]
+- `TaxonomicMLP.__init__` (method) `apex29.py:206` `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+- `TaxonomicMLP.apply_masks` (method) `apex29.py:229` `def apply_masks(self)` -- Apply sparsity masks to weights
+- `TaxonomicMLP.get_sparsity` (method) `apex29.py:236` `def get_sparsity(self)` -- Calculate overall sparsity percentage
+- `TaxonomicMLP.forward` (method) `apex29.py:242` `def forward(self, x)` -- Input:  [B, input_dim] Output: ([B, num_classes], [B, num_superclasses])
+- `TaxonomicMLP.compute_spectral_loss` (method) `apex29.py:262` `def compute_spectral_loss(W)` -- Optimization Objective for Spectral Control (L_opt)
+- `SpectralMonitor.__init__` (method) `apex29.py:280` `def __init__(self, epsilon)`
+- `SpectralMonitor.compute_metrics` (method) `apex29.py:283` `def compute_metrics(self, weight)` -- Compute spectral coherence metrics
+- `SpectralMonitor.get_singular_values` (method) `apex29.py:299` `def get_singular_values(self, weight)` -- Get singular values for visualization
+- `AdaptiveTopologyController.__init__` (method) `apex29.py:311` `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+- `AdaptiveTopologyController.compute_semantic_plasticity_ratio` (method) `apex29.py:323` `def compute_semantic_plasticity_ratio(self)` -- Compute ratio of semantic gain to structural change
+- `AdaptiveTopologyController.detect_intervention_need` (method) `apex29.py:336` `def detect_intervention_need(self, phase_state, extractor)` -- Determine if intervention is needed using adaptive criteria
+- `AdaptiveTopologyController.update_history` (method) `apex29.py:358` `def update_history(self, topo_ratio, coarse_acc)` -- Update history for adaptive control
+- `AdaptiveTopologyController.perturb_mixer_targeted` (method) `apex29.py:375` `def perturb_mixer_targeted(self, extractor)` -- Targeted Spectral Surgery: Inject noise in the nullspace of dominant subspace
+- `IterativeRefinementEngine.__init__` (method) `apex29.py:410` `def __init__(self, device)`
+- `IterativeRefinementEngine.apply_rank_capping` (method) `apex29.py:414` `def apply_rank_capping(self, model, layer_name, keep_ratio)` -- Apply rank capping shock to prevent over-specialization
+- `IterativeRefinementEngine.create_refined_model` (method) `apex29.py:430` `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)` -- Create refined model through gradient-based inheritance
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex29.py:486` `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)` -- Run hierarchy stress test to validate inductive bias transfer
+- `CoarseCIFAR100.evaluate` (method) `apex29.py:499` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.visualize_singular_values` (method) `apex29.py:543` `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...` -- Generate publication-quality singular value visualizations
+- `CoarseCIFAR100.get_singular_values` (method) `apex29.py:551` `def get_singular_values(model, extractor, name)` -- Get singular values from model weights
+- `IterativeRefinementTrainer.__init__` (method) `apex29.py:608` `def __init__(self, device, output_dir)`
+- `IterativeRefinementTrainer.load_data` (method) `apex29.py:634` `def load_data(self, cycle, batch_size)` -- Load curriculum dataset based on refinement cycle
+- `IterativeRefinementTrainer.train_model` (method) `apex29.py:674` `def train_model(self, model, cycle, chain_type, feature_extractor)` -- Train model with iterative refinement and hierarchical learning
+- `IterativeRefinementTrainer.detect_phase_state` (method) `apex29.py:894` `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)` -- Detect phase state based on topology ratio history
+- `IterativeRefinementTrainer.compute_topology_ratio` (method) `apex29.py:912` `def compute_topology_ratio(self, model, extractor, chain_type)` -- Calculates Topo_R = L_opt / L_mon.
+- `IterativeRefinementTrainer.run_refinement` (method) `apex29.py:931` `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)` -- Run full iterative refinement experiment with statistical validation
+- `IterativeRefinementTrainer.parse_args` (method) `apex29.py:1244` `def parse_args()`
+- `IterativeRefinementTrainer.main` (method) `apex29.py:1255` `def main()` -- Main execution function
+
+## apex30.py
+- `set_seed` (function) `apex30.py:43` `def set_seed(seed)` -- Ensure full reproducibility across runs
+- `GatedTokenMixer.__init__` (method) `apex30.py:89` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex30.py:134` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex30.py:143` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex30.py:164` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex30.py:169` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex30.py:175` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex30.py:187` `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+- `TaxonomicMLP.apply_masks` (method) `apex30.py:207` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex30.py:213` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex30.py:218` `def forward(self, x)`
+- `TaxonomicMLP.compute_spectral_loss` (method) `apex30.py:232` `def compute_spectral_loss(W)` -- Optimization Objective for Spectral Control (L_opt)
+- `SpectralMonitor.__init__` (method) `apex30.py:250` `def __init__(self, epsilon)`
+- `SpectralMonitor.compute_metrics` (method) `apex30.py:253` `def compute_metrics(self, weight)`
+- `SpectralMonitor.get_singular_values` (method) `apex30.py:268` `def get_singular_values(self, weight)`
+- `AdaptiveTopologyController.__init__` (method) `apex30.py:279` `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+- `AdaptiveTopologyController.compute_semantic_plasticity_ratio` (method) `apex30.py:295` `def compute_semantic_plasticity_ratio(self)` -- Compute ratio of semantic gain to structural change
+- `AdaptiveTopologyController.detect_intervention_need` (method) `apex30.py:308` `def detect_intervention_need(self, phase_state, extractor)` -- Determine if intervention is needed using adaptive criteria.
+- `AdaptiveTopologyController.update_history` (method) `apex30.py:348` `def update_history(self, topo_ratio, coarse_acc)` -- Update history for adaptive control
+- `AdaptiveTopologyController.perturb_mixer_targeted` (method) `apex30.py:363` `def perturb_mixer_targeted(self, extractor)` -- Targeted Spectral Surgery: Inject noise in the nullspace of dominant subspace
+- `IterativeRefinementEngine.__init__` (method) `apex30.py:399` `def __init__(self, device)`
+- `IterativeRefinementEngine.apply_rank_capping` (method) `apex30.py:403` `def apply_rank_capping(self, model, layer_name, keep_ratio)`
+- `IterativeRefinementEngine.create_refined_model` (method) `apex30.py:419` `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex30.py:464` `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex30.py:471` `def evaluate(model, extractor)`
+- `CoarseCIFAR100.visualize_singular_values` (method) `apex30.py:510` `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...` -- v18.1 FIX: Now accepts 'monitor' explicitly.
+- `CoarseCIFAR100.get_singular_values` (method) `apex30.py:521` `def get_singular_values(model, extractor)`
+- `IterativeRefinementTrainer.__init__` (method) `apex30.py:571` `def __init__(self, device, output_dir)`
+- `IterativeRefinementTrainer.load_data` (method) `apex30.py:593` `def load_data(self, cycle, batch_size)`
+- `IterativeRefinementTrainer.train_model` (method) `apex30.py:617` `def train_model(self, model, cycle, chain_type, feature_extractor)`
+- `IterativeRefinementTrainer.detect_phase_state` (method) `apex30.py:797` `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+- `IterativeRefinementTrainer.compute_topology_ratio` (method) `apex30.py:813` `def compute_topology_ratio(self, model, extractor, chain_type)`
+- `IterativeRefinementTrainer.run_refinement` (method) `apex30.py:828` `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+- `IterativeRefinementTrainer.parse_args` (method) `apex30.py:1062` `def parse_args()`
+- `IterativeRefinementTrainer.main` (method) `apex30.py:1071` `def main()`
+
+## apex31.py
+- `set_seed` (function) `apex31.py:45` `def set_seed(seed)` -- Ensure full reproducibility across runs
+- `GatedTokenMixer.__init__` (method) `apex31.py:91` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex31.py:136` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex31.py:145` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex31.py:166` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex31.py:171` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex31.py:177` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex31.py:189` `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+- `TaxonomicMLP.apply_masks` (method) `apex31.py:209` `def apply_masks(self)`
+- `TaxonomicMLP.get_sparsity` (method) `apex31.py:215` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex31.py:220` `def forward(self, x)`
+- `TaxonomicMLP.compute_spectral_loss` (method) `apex31.py:234` `def compute_spectral_loss(W)` -- Optimization Objective for Spectral Control (L_opt)
+- `SpectralMonitor.__init__` (method) `apex31.py:252` `def __init__(self, epsilon)`
+- `SpectralMonitor.compute_metrics` (method) `apex31.py:255` `def compute_metrics(self, weight)`
+- `SpectralMonitor.get_singular_values` (method) `apex31.py:270` `def get_singular_values(self, weight)`
+- `AdaptiveTopologyController.__init__` (method) `apex31.py:281` `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+- `AdaptiveTopologyController.compute_semantic_plasticity_ratio` (method) `apex31.py:297` `def compute_semantic_plasticity_ratio(self)` -- Compute ratio of semantic gain to structural change
+- `AdaptiveTopologyController.detect_intervention_need` (method) `apex31.py:310` `def detect_intervention_need(self, phase_state, extractor)` -- Determine if intervention is needed using adaptive criteria.
+- `AdaptiveTopologyController.update_history` (method) `apex31.py:354` `def update_history(self, topo_ratio, coarse_acc)` -- Update history for adaptive control
+- `AdaptiveTopologyController.perturb_mixer_targeted` (method) `apex31.py:369` `def perturb_mixer_targeted(self, extractor)` -- Targeted Spectral Surgery: Inject noise in the nullspace of dominant subspace
+- `IterativeRefinementEngine.__init__` (method) `apex31.py:406` `def __init__(self, device)`
+- `IterativeRefinementEngine.apply_rank_capping` (method) `apex31.py:410` `def apply_rank_capping(self, model, layer_name, keep_ratio)`
+- `IterativeRefinementEngine.create_refined_model` (method) `apex31.py:430` `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex31.py:475` `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex31.py:482` `def evaluate(model, extractor)`
+- `CoarseCIFAR100.visualize_singular_values` (method) `apex31.py:521` `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...` -- v18.1 FIX: Now accepts 'monitor' explicitly.
+- `CoarseCIFAR100.get_singular_values` (method) `apex31.py:532` `def get_singular_values(model, extractor)`
+- `IterativeRefinementTrainer.__init__` (method) `apex31.py:582` `def __init__(self, device, output_dir)`
+- `IterativeRefinementTrainer.load_data` (method) `apex31.py:604` `def load_data(self, cycle, batch_size)`
+- `IterativeRefinementTrainer.train_model` (method) `apex31.py:628` `def train_model(self, model, cycle, chain_type, feature_extractor)`
+- `IterativeRefinementTrainer.detect_phase_state` (method) `apex31.py:808` `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+- `IterativeRefinementTrainer.compute_topology_ratio` (method) `apex31.py:824` `def compute_topology_ratio(self, model, extractor, chain_type)`
+- `IterativeRefinementTrainer.run_refinement` (method) `apex31.py:839` `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+- `IterativeRefinementTrainer.parse_args` (method) `apex31.py:1073` `def parse_args()`
+- `IterativeRefinementTrainer.main` (method) `apex31.py:1082` `def main()`
+
+## apex32.py
+- `compute_spectral_loss` (function) `apex32.py:76` `def compute_spectral_loss(W)` -- L_opt: Optimization Objective for Structural Control.
+- `GatedTokenMixer.__init__` (method) `apex32.py:93` `def __init__(self, num_patches, embed_dim)`
+- `GatedTokenMixer.forward` (method) `apex32.py:102` `def forward(self, x)`
+- `PatchFeatureExtractor.__init__` (method) `apex32.py:110` `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+- `PatchFeatureExtractor.freeze` (method) `apex32.py:126` `def freeze(self)`
+- `PatchFeatureExtractor.unfreeze_mixer_only` (method) `apex32.py:130` `def unfreeze_mixer_only(self)`
+- `PatchFeatureExtractor.forward` (method) `apex32.py:136` `def forward(self, x)`
+- `TaxonomicMLP.__init__` (method) `apex32.py:149` `def __init__(self, input_dim, hidden_dim, num_classes)`
+- `TaxonomicMLP.apply_masks` (method) `apex32.py:164` `def apply_masks(self)` -- Zero out weights based on masks.
+- `TaxonomicMLP.get_sparsity` (method) `apex32.py:171` `def get_sparsity(self)`
+- `TaxonomicMLP.forward` (method) `apex32.py:176` `def forward(self, x)`
+- `SpectralMonitor.compute_metrics` (method) `apex32.py:188` `def compute_metrics(self, weight)`
+- `SpectralMonitor.detect_phase_state` (method) `apex32.py:200` `def detect_phase_state(self, ratio_history)`
+- `SpectralMonitor.compute_topology_ratio` (method) `apex32.py:211` `def compute_topology_ratio(self, model, extractor, chain_type)`
+- `TaxonomicTrainer.__init__` (method) `apex32.py:227` `def __init__(self, device, extractor_apex, extractor_blind)`
+- `TaxonomicTrainer.get_curriculum_dataset` (method) `apex32.py:238` `def get_curriculum_dataset(self, cycle)`
+- `TaxonomicTrainer.train_single_chain` (method) `apex32.py:244` `def train_single_chain(self, model, cycle, chain_type)`
+- `CoarseCIFAR100.run_hierarchy_benchmark` (method) `apex32.py:409` `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+- `CoarseCIFAR100.evaluate` (method) `apex32.py:422` `def evaluate(model, extractor, name)`
+- `CoarseCIFAR100.main` (method) `apex32.py:455` `def main()`
+
+
+Next: [API_p2.md](API_p2.md)

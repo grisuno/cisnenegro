@@ -1,0 +1,488 @@
+# Subsystem: root (page 2 of 3)
+Previous: [KB_root.md](KB_root.md)
+
+## apex27.py
+- Doc: NeuroSovereign v18.0: Adaptive Iterative Spectral Refinement Production-ready implementation...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 38) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 83) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 124) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 170) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 217) `def compute_spectral_loss(W)`
+  - `DynamicThresholdController` (class, line 233) `class DynamicThresholdController`
+  - `SpectralMonitor` (class, line 255) `class SpectralMonitor`
+  - `TopologyController` (class, line 275) `class TopologyController`
+  - `IterativeRefinementEngine` (class, line 369) `class IterativeRefinementEngine`
+  - `IterativeTrainer` (class, line 416) `class IterativeTrainer`
+  - `parse_args` (method, line 900) `def parse_args()`
+  - `main` (method, line 914) `def main()`
+  - `__init__` (method, line 85) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 104) `def _init_weights(self)`
+  - `forward` (method, line 116) `def forward(self, x)`
+  - `__init__` (method, line 126) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 151) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 156) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 162) `def forward(self, x)`
+  - `__init__` (method, line 172) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 192) `def apply_masks(self)`
+  - `get_sparsity` (method, line 198) `def get_sparsity(self)`
+  - `forward` (method, line 203) `def forward(self, x)`
+  - `__init__` (method, line 238) `def __init__(self, window_size, percentile_trigger)`
+  - `update` (method, line 243) `def update(self, value)`
+  - `is_stagnant` (method, line 246) `def is_stagnant(self, current_val)`
+  - `__init__` (method, line 257) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 260) `def compute_metrics(self, weight)`
+  - `__init__` (method, line 280) `def __init__(self, dynamic_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold, enable_surgery)`
+  - `check_intervention` (method, line 291) `def check_intervention(self, coarse_acc, extractor, current_topo_r, geo_window, alpha)`
+  - `perturb_mixer_targeted` (method, line 336) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 371) `def __init__(self, device)`
+  - `create_offspring` (method, line 374) `def create_offspring(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__init__` (method, line 418) `def __init__(self, device, output_dir, enable_surgery, enable_taxonomy)`
+  - `load_data` (method, line 441) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 479) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `compute_topology_ratio` (method, line 683) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 696) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 809) `def _save_results(self, all_results)`
+  - `_plot_results_v18` (method, line 815) `def _plot_results_v18(self, all_results)`
+
+## apex28.py
+- Doc: NeuroSovereign v18.0: Iterative Spectral Refinement with Adaptive Control Addressing all senior...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 47) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 93) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 150) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 211) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 269) `def compute_spectral_loss(W)`
+  - `SpectralMonitor` (class, line 285) `class SpectralMonitor`
+  - `AdaptiveTopologyController` (class, line 316) `class AdaptiveTopologyController`
+  - `IterativeRefinementEngine` (class, line 415) `class IterativeRefinementEngine`
+  - `CoarseCIFAR100` (class, line 484) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 494) `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+  - `visualize_singular_values` (method, line 548) `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...`
+  - `IterativeRefinementTrainer` (class, line 611) `class IterativeRefinementTrainer`
+  - `parse_args` (method, line 1270) `def parse_args()`
+  - `main` (method, line 1282) `def main()`
+  - `__init__` (method, line 95) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 118) `def _init_weights(self)`
+  - `forward` (method, line 132) `def forward(self, x)`
+  - `__init__` (method, line 152) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 181) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 187) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 194) `def forward(self, x)`
+  - `__init__` (method, line 213) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 236) `def apply_masks(self)`
+  - `get_sparsity` (method, line 243) `def get_sparsity(self)`
+  - `forward` (method, line 249) `def forward(self, x)`
+  - `__init__` (method, line 287) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 290) `def compute_metrics(self, weight)`
+  - `get_singular_values` (method, line 306) `def get_singular_values(self, weight)`
+  - `__init__` (method, line 318) `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+  - `compute_semantic_plasticity_ratio` (method, line 330) `def compute_semantic_plasticity_ratio(self)`
+  - `detect_intervention_need` (method, line 343) `def detect_intervention_need(self, phase_state, extractor)`
+  - `update_history` (method, line 365) `def update_history(self, topo_ratio, coarse_acc)`
+  - `perturb_mixer_targeted` (method, line 382) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 417) `def __init__(self, device)`
+  - `apply_rank_capping` (method, line 421) `def apply_rank_capping(self, model, layer_name, keep_ratio)`
+  - `create_refined_model` (method, line 438) `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__getitem__` (method, line 489) `def __getitem__(self, index)`
+  - `evaluate` (method, line 507) `def evaluate(model, extractor, name)`
+  - `get_singular_values` (method, line 556) `def get_singular_values(model, extractor, name)`
+  - `__init__` (method, line 613) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 639) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 681) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `detect_phase_state` (method, line 908) `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+  - `compute_topology_ratio` (method, line 926) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 944) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 1126) `def _save_results(self, all_results, best_overall, hierarchy_delta)`
+  - `_plot_results` (method, line 1181) `def _plot_results(self, all_results)`
+
+## apex29.py
+- Doc: NeuroSovereign v18.0: Iterative Spectral Refinement with Adaptive Control Addressing all senior...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 43) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 86) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 143) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 204) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 262) `def compute_spectral_loss(W)`
+  - `SpectralMonitor` (class, line 278) `class SpectralMonitor`
+  - `AdaptiveTopologyController` (class, line 309) `class AdaptiveTopologyController`
+  - `IterativeRefinementEngine` (class, line 408) `class IterativeRefinementEngine`
+  - `CoarseCIFAR100` (class, line 476) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 486) `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+  - `visualize_singular_values` (method, line 543) `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...`
+  - `IterativeRefinementTrainer` (class, line 606) `class IterativeRefinementTrainer`
+  - `parse_args` (method, line 1244) `def parse_args()`
+  - `main` (method, line 1255) `def main()`
+  - `__init__` (method, line 88) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 111) `def _init_weights(self)`
+  - `forward` (method, line 125) `def forward(self, x)`
+  - `__init__` (method, line 145) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 174) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 180) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 187) `def forward(self, x)`
+  - `__init__` (method, line 206) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 229) `def apply_masks(self)`
+  - `get_sparsity` (method, line 236) `def get_sparsity(self)`
+  - `forward` (method, line 242) `def forward(self, x)`
+  - `__init__` (method, line 280) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 283) `def compute_metrics(self, weight)`
+  - `get_singular_values` (method, line 299) `def get_singular_values(self, weight)`
+  - `__init__` (method, line 311) `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+  - `compute_semantic_plasticity_ratio` (method, line 323) `def compute_semantic_plasticity_ratio(self)`
+  - `detect_intervention_need` (method, line 336) `def detect_intervention_need(self, phase_state, extractor)`
+  - `update_history` (method, line 358) `def update_history(self, topo_ratio, coarse_acc)`
+  - `perturb_mixer_targeted` (method, line 375) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 410) `def __init__(self, device)`
+  - `apply_rank_capping` (method, line 414) `def apply_rank_capping(self, model, layer_name, keep_ratio)`
+  - `create_refined_model` (method, line 430) `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__getitem__` (method, line 481) `def __getitem__(self, index)`
+  - `evaluate` (method, line 499) `def evaluate(model, extractor, name)`
+  - `get_singular_values` (method, line 551) `def get_singular_values(model, extractor, name)`
+  - `__init__` (method, line 608) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 634) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 674) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `detect_phase_state` (method, line 894) `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+  - `compute_topology_ratio` (method, line 912) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 931) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 1109) `def _save_results(self, all_results, best_overall, hierarchy_delta)`
+  - `_plot_results` (method, line 1164) `def _plot_results(self, all_results)`
+
+## apex30.py
+- Doc: NeuroSovereign v18.1: Production-Grade Iterative Spectral Refinement Hardened Implementation...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 43) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 87) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 142) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 185) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 232) `def compute_spectral_loss(W)`
+  - `SpectralMonitor` (class, line 248) `class SpectralMonitor`
+  - `AdaptiveTopologyController` (class, line 277) `class AdaptiveTopologyController`
+  - `IterativeRefinementEngine` (class, line 397) `class IterativeRefinementEngine`
+  - `CoarseCIFAR100` (class, line 459) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 464) `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+  - `visualize_singular_values` (method, line 510) `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...`
+  - `IterativeRefinementTrainer` (class, line 570) `class IterativeRefinementTrainer`
+  - `parse_args` (method, line 1062) `def parse_args()`
+  - `main` (method, line 1071) `def main()`
+  - `__init__` (method, line 89) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 111) `def _init_weights(self)`
+  - `forward` (method, line 134) `def forward(self, x)`
+  - `__init__` (method, line 143) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 164) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 169) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 175) `def forward(self, x)`
+  - `__init__` (method, line 187) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 207) `def apply_masks(self)`
+  - `get_sparsity` (method, line 213) `def get_sparsity(self)`
+  - `forward` (method, line 218) `def forward(self, x)`
+  - `__init__` (method, line 250) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 253) `def compute_metrics(self, weight)`
+  - `get_singular_values` (method, line 268) `def get_singular_values(self, weight)`
+  - `__init__` (method, line 279) `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+  - `compute_semantic_plasticity_ratio` (method, line 295) `def compute_semantic_plasticity_ratio(self)`
+  - `detect_intervention_need` (method, line 308) `def detect_intervention_need(self, phase_state, extractor)`
+  - `update_history` (method, line 348) `def update_history(self, topo_ratio, coarse_acc)`
+  - `perturb_mixer_targeted` (method, line 363) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 399) `def __init__(self, device)`
+  - `apply_rank_capping` (method, line 403) `def apply_rank_capping(self, model, layer_name, keep_ratio)`
+  - `create_refined_model` (method, line 419) `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__getitem__` (method, line 460) `def __getitem__(self, index)`
+  - `evaluate` (method, line 471) `def evaluate(model, extractor)`
+  - `get_singular_values` (method, line 521) `def get_singular_values(model, extractor)`
+  - `__init__` (method, line 571) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 593) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 617) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `detect_phase_state` (method, line 797) `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+  - `compute_topology_ratio` (method, line 813) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 828) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 956) `def _save_results(self, all_results, best_overall, hierarchy_delta)`
+  - `_plot_results` (method, line 983) `def _plot_results(self, all_results, best_overall)`
+
+## apex31.py
+- Doc: NeuroSovereign v18.1: Production-Grade Iterative Spectral Refinement Hardened Implementation...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 45) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 89) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 144) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 187) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 234) `def compute_spectral_loss(W)`
+  - `SpectralMonitor` (class, line 250) `class SpectralMonitor`
+  - `AdaptiveTopologyController` (class, line 279) `class AdaptiveTopologyController`
+  - `IterativeRefinementEngine` (class, line 404) `class IterativeRefinementEngine`
+  - `CoarseCIFAR100` (class, line 470) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 475) `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+  - `visualize_singular_values` (method, line 521) `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...`
+  - `IterativeRefinementTrainer` (class, line 581) `class IterativeRefinementTrainer`
+  - `parse_args` (method, line 1073) `def parse_args()`
+  - `main` (method, line 1082) `def main()`
+  - `__init__` (method, line 91) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 113) `def _init_weights(self)`
+  - `forward` (method, line 136) `def forward(self, x)`
+  - `__init__` (method, line 145) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 166) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 171) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 177) `def forward(self, x)`
+  - `__init__` (method, line 189) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 209) `def apply_masks(self)`
+  - `get_sparsity` (method, line 215) `def get_sparsity(self)`
+  - `forward` (method, line 220) `def forward(self, x)`
+  - `__init__` (method, line 252) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 255) `def compute_metrics(self, weight)`
+  - `get_singular_values` (method, line 270) `def get_singular_values(self, weight)`
+  - `__init__` (method, line 281) `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+  - `compute_semantic_plasticity_ratio` (method, line 297) `def compute_semantic_plasticity_ratio(self)`
+  - `detect_intervention_need` (method, line 310) `def detect_intervention_need(self, phase_state, extractor)`
+  - `update_history` (method, line 354) `def update_history(self, topo_ratio, coarse_acc)`
+  - `perturb_mixer_targeted` (method, line 369) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 406) `def __init__(self, device)`
+  - `apply_rank_capping` (method, line 410) `def apply_rank_capping(self, model, layer_name, keep_ratio)`
+  - `create_refined_model` (method, line 430) `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__getitem__` (method, line 471) `def __getitem__(self, index)`
+  - `evaluate` (method, line 482) `def evaluate(model, extractor)`
+  - `get_singular_values` (method, line 532) `def get_singular_values(model, extractor)`
+  - `__init__` (method, line 582) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 604) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 628) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `detect_phase_state` (method, line 808) `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+  - `compute_topology_ratio` (method, line 824) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 839) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 967) `def _save_results(self, all_results, best_overall, hierarchy_delta)`
+  - `_plot_results` (method, line 994) `def _plot_results(self, all_results, best_overall)`
+
+## apex32.py
+- Doc: NeuroSovereign v15.4: Aggressive Hierarchical Shock & Warmup Sparsity Based on v15.3...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `compute_spectral_loss` (function, line 76) `def compute_spectral_loss(W)`
+  - `GatedTokenMixer` (class, line 92) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 109) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 148) `class TaxonomicMLP(Module)`
+  - `SpectralMonitor` (class, line 187) `class SpectralMonitor`
+  - `TaxonomicTrainer` (class, line 226) `class TaxonomicTrainer`
+  - `CoarseCIFAR100` (class, line 404) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 409) `def run_hierarchy_benchmark(model_apex, model_blind, device)`
+  - `main` (method, line 455) `def main()`
+  - `__init__` (method, line 93) `def __init__(self, num_patches, embed_dim)`
+  - `forward` (method, line 102) `def forward(self, x)`
+  - `__init__` (method, line 110) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 126) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 130) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 136) `def forward(self, x)`
+  - `__init__` (method, line 149) `def __init__(self, input_dim, hidden_dim, num_classes)`
+  - `apply_masks` (method, line 164) `def apply_masks(self)`
+  - `get_sparsity` (method, line 171) `def get_sparsity(self)`
+  - `forward` (method, line 176) `def forward(self, x)`
+  - `compute_metrics` (method, line 188) `def compute_metrics(self, weight)`
+  - `detect_phase_state` (method, line 200) `def detect_phase_state(self, ratio_history)`
+  - `compute_topology_ratio` (method, line 211) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `__init__` (method, line 227) `def __init__(self, device, extractor_apex, extractor_blind)`
+  - `_preprocess_batch` (method, line 234) `def _preprocess_batch(self, x, extractor)`
+  - `get_curriculum_dataset` (method, line 238) `def get_curriculum_dataset(self, cycle)`
+  - `train_single_chain` (method, line 244) `def train_single_chain(self, model, cycle, chain_type)`
+  - `__getitem__` (method, line 405) `def __getitem__(self, index)`
+  - `evaluate` (method, line 422) `def evaluate(model, extractor, name)`
+
+## apex33.py
+- Doc: NeuroSovereign v18.2: The Scientific Powerhouse Fusion of v18.1 Rigor + v15.4 Aggressive...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 41) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 72) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 118) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 150) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 190) `def compute_spectral_loss(W)`
+  - `SpectralMonitor` (class, line 201) `class SpectralMonitor`
+  - `AdaptiveTopologyController` (class, line 227) `class AdaptiveTopologyController`
+  - `IterativeRefinementEngine` (class, line 310) `class IterativeRefinementEngine`
+  - `IterativeRefinementTrainer` (class, line 343) `class IterativeRefinementTrainer`
+  - `CoarseCIFAR100` (class, line 802) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 807) `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+  - `visualize_singular_values` (method, line 845) `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...`
+  - `parse_args` (method, line 894) `def parse_args()`
+  - `main` (method, line 903) `def main()`
+  - `__init__` (method, line 74) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 92) `def _init_weights(self)`
+  - `forward` (method, line 110) `def forward(self, x)`
+  - `__init__` (method, line 119) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 135) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 138) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 143) `def forward(self, x)`
+  - `__init__` (method, line 152) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 167) `def apply_masks(self)`
+  - `get_sparsity` (method, line 173) `def get_sparsity(self)`
+  - `forward` (method, line 178) `def forward(self, x)`
+  - `__init__` (method, line 202) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 205) `def compute_metrics(self, weight)`
+  - `get_singular_values` (method, line 219) `def get_singular_values(self, weight)`
+  - `__init__` (method, line 229) `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+  - `compute_semantic_plasticity_ratio` (method, line 242) `def compute_semantic_plasticity_ratio(self)`
+  - `detect_intervention_need` (method, line 250) `def detect_intervention_need(self, phase_state, extractor)`
+  - `update_history` (method, line 273) `def update_history(self, topo_ratio, coarse_acc)`
+  - `perturb_mixer_targeted` (method, line 284) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 311) `def __init__(self, device)`
+  - `create_refined_model` (method, line 315) `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__init__` (method, line 344) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 367) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 385) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `detect_phase_state` (method, line 570) `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+  - `compute_topology_ratio` (method, line 580) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 592) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 712) `def _save_results(self, all_results, best_overall, hierarchy_delta)`
+  - `_plot_results` (method, line 738) `def _plot_results(self, all_results, best_overall)`
+  - `__getitem__` (method, line 803) `def __getitem__(self, index)`
+  - `evaluate` (method, line 814) `def evaluate(model, extractor)`
+  - `get_singular_values` (method, line 851) `def get_singular_values(model, extractor)`
+
+## apex34.py
+- Doc: NeuroSovereign v18.2: The Scientific Powerhouse Fusion of v18.1 Rigor + v15.4 Aggressive...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 41) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 72) `class GatedTokenMixer(Module)`
+  - `PatchFeatureExtractor` (class, line 118) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 150) `class TaxonomicMLP(Module)`
+  - `compute_spectral_loss` (method, line 190) `def compute_spectral_loss(W)`
+  - `SpectralMonitor` (class, line 201) `class SpectralMonitor`
+  - `AdaptiveTopologyController` (class, line 227) `class AdaptiveTopologyController`
+  - `IterativeRefinementEngine` (class, line 310) `class IterativeRefinementEngine`
+  - `IterativeRefinementTrainer` (class, line 343) `class IterativeRefinementTrainer`
+  - `CoarseCIFAR100` (class, line 802) `class CoarseCIFAR100(CIFAR100)`
+  - `run_hierarchy_benchmark` (method, line 807) `def run_hierarchy_benchmark(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device)`
+  - `visualize_singular_values` (method, line 845) `def visualize_singular_values(model_apex, model_blind, feature_extractor_apex, feature_extractor_blind, device...`
+  - `main` (method, line 894) `def main()`
+  - `__init__` (method, line 74) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 92) `def _init_weights(self)`
+  - `forward` (method, line 110) `def forward(self, x)`
+  - `__init__` (method, line 119) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 135) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 138) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 143) `def forward(self, x)`
+  - `__init__` (method, line 152) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 167) `def apply_masks(self)`
+  - `get_sparsity` (method, line 173) `def get_sparsity(self)`
+  - `forward` (method, line 178) `def forward(self, x)`
+  - `__init__` (method, line 202) `def __init__(self, epsilon)`
+  - `compute_metrics` (method, line 205) `def compute_metrics(self, weight)`
+  - `get_singular_values` (method, line 219) `def get_singular_values(self, weight)`
+  - `__init__` (method, line 229) `def __init__(self, semantic_plasticity_threshold, stagnation_limit, mixer_noise_scale, dominant_energy_threshold...`
+  - `compute_semantic_plasticity_ratio` (method, line 242) `def compute_semantic_plasticity_ratio(self)`
+  - `detect_intervention_need` (method, line 250) `def detect_intervention_need(self, phase_state, extractor)`
+  - `update_history` (method, line 273) `def update_history(self, topo_ratio, coarse_acc)`
+  - `perturb_mixer_targeted` (method, line 284) `def perturb_mixer_targeted(self, extractor)`
+  - `__init__` (method, line 311) `def __init__(self, device)`
+  - `create_refined_model` (method, line 315) `def create_refined_model(self, parent_state, data_loader, feature_extractor, lambda_taxonomic, learning_rate)`
+  - `__init__` (method, line 344) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 367) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 385) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `detect_phase_state` (method, line 570) `def detect_phase_state(self, ratio_history, phase_window, phase_std_dev_limit)`
+  - `compute_topology_ratio` (method, line 580) `def compute_topology_ratio(self, model, extractor, chain_type)`
+  - `run_refinement` (method, line 592) `def run_refinement(self, num_iterations, num_seeds, early_stop_patience)`
+  - `_save_results` (method, line 712) `def _save_results(self, all_results, best_overall, hierarchy_delta)`
+  - `_plot_results` (method, line 738) `def _plot_results(self, all_results, best_overall)`
+  - `__getitem__` (method, line 803) `def __getitem__(self, index)`
+  - `evaluate` (method, line 814) `def evaluate(model, extractor)`
+  - `get_singular_values` (method, line 851) `def get_singular_values(model, extractor)`
+
+## apex35.py
+- Doc: NeuroSovereign v19.0: Synergy Engine (Anti-Leakage Certified) Based on v4.0 Ablation Suite...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `set_seed` (function, line 36) `def set_seed(seed)`
+  - `GatedTokenMixer` (class, line 66) `class GatedTokenMixer(Module)`
+  - `E8FusionLayer` (class, line 112) `class E8FusionLayer(Module)`
+  - `PatchFeatureExtractor` (class, line 156) `class PatchFeatureExtractor(Module)`
+  - `TaxonomicMLP` (class, line 188) `class TaxonomicMLP(Module)`
+  - `BlackMirrorMonitor` (class, line 227) `class BlackMirrorMonitor`
+  - `IterativeRefinementTrainer` (class, line 253) `class IterativeRefinementTrainer`
+  - `CoarseCIFAR100` (class, line 439) `class CoarseCIFAR100(CIFAR100)`
+  - `main` (method, line 444) `def main()`
+  - `__init__` (method, line 68) `def __init__(self, num_patches, embed_dim)`
+  - `_init_weights` (method, line 86) `def _init_weights(self)`
+  - `forward` (method, line 104) `def forward(self, x)`
+  - `__init__` (method, line 118) `def __init__(self, embed_dim, num_heads)`
+  - `forward` (method, line 136) `def forward(self, x)`
+  - `__init__` (method, line 157) `def __init__(self, img_size, patch_size, in_chans, embed_dim, use_mixer)`
+  - `freeze` (method, line 173) `def freeze(self)`
+  - `unfreeze_mixer_only` (method, line 176) `def unfreeze_mixer_only(self)`
+  - `forward` (method, line 181) `def forward(self, x)`
+  - `__init__` (method, line 189) `def __init__(self, input_dim, hidden_dim, num_classes, num_superclasses)`
+  - `apply_masks` (method, line 204) `def apply_masks(self)`
+  - `get_sparsity` (method, line 210) `def get_sparsity(self)`
+  - `forward` (method, line 215) `def forward(self, x)`
+  - `__init__` (method, line 229) `def __init__(self, epsilon)`
+  - `inspect` (method, line 232) `def inspect(self, weight)`
+  - `__init__` (method, line 254) `def __init__(self, device, output_dir)`
+  - `load_data` (method, line 274) `def load_data(self, cycle, batch_size)`
+  - `train_model` (method, line 292) `def train_model(self, model, cycle, chain_type, feature_extractor)`
+  - `__getitem__` (method, line 440) `def __getitem__(self, index)`
+  - `evaluate_safe` (method, line 483) `def evaluate_safe(model, extractor)`
+
+## app.py
+- Doc: Autor: Gris Iscomeback Correo electrónico: grisiscomeback[at]gmail[dot]com Fecha de creación...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `SpectralMonitor` (class, line 51) `class SpectralMonitor`
+  - `PersistentPruner` (class, line 76) `class PersistentPruner`
+  - `SpectralMLP` (class, line 98) `class SpectralMLP(Module)`
+  - `EvolutionaryResonanceEngine` (class, line 121) `class EvolutionaryResonanceEngine`
+  - `main` (method, line 561) `def main()`
+  - `__init__` (method, line 52) `def __init__(self, epsilon_c)`
+  - `compute_L` (method, line 55) `def compute_L(self, weight)`
+  - `__init__` (method, line 77) `def __init__(self, sparsity_target)`
+  - `apply_to_model` (method, line 81) `def apply_to_model(self, model)`
+  - `enforce_during_training` (method, line 91) `def enforce_during_training(self, model)`
+  - `__init__` (method, line 99) `def __init__(self, input_dim, hidden_dim, num_classes)`
+  - `reduce_input` (method, line 107) `def reduce_input(self, x)`
+  - `forward` (method, line 113) `def forward(self, x)`
+  - `__init__` (method, line 122) `def __init__(self, device, base_target_acc)`
+  - `load_best_legacy_model` (method, line 137) `def load_best_legacy_model(self, cycle)`
+  - `train_base_model_to_target` (method, line 175) `def train_base_model_to_target(self, hidden_dim, target_acc, test_loader)`
+  - `extract_seed_from_checkpoint` (method, line 228) `def extract_seed_from_checkpoint(self, checkpoint, expected_hidden_dim)`
+  - `extract_seed_weights` (method, line 254) `def extract_seed_weights(self, model)`
+  - `inoculate_seed_adaptive` (method, line 260) `def inoculate_seed_adaptive(self, large_model, seed_weights)`
+  - `measure_functional_alignment` (method, line 288) `def measure_functional_alignment(self, model1, model2, test_loader)`
+  - `progressive_pruning_with_target` (method, line 309) `def progressive_pruning_with_target(self, model, target_acc, test_loader, max_density)`
+  - `execute_resonance_cycle` (method, line 351) `def execute_resonance_cycle(self, cycle, test_loader, expansion_factor)`
+  - `run_evolutionary_experiment` (method, line 484) `def run_evolutionary_experiment(self, num_cycles)`
+
+## install.sh
+- Layer: utility
+- Language: sh
+
+## plank.py
+- Doc: 🌌 NEUROSOVEREIGN v3.0: La Constante de Planck del Machine Learning...
+- Layer: utility
+- Language: py
+- Symbols:
+  - `BlackMirrorMonitor` (class, line 28) `class BlackMirrorMonitor`
+  - `SovereignNeuron` (class, line 62) `class SovereignNeuron(Module)`
+  - `NeuroSovereign` (class, line 108) `class NeuroSovereign(Module)`
+  - `SovereignTrainer` (class, line 132) `class SovereignTrainer`
+  - `main` (method, line 178) `def main()`
+  - `__init__` (method, line 33) `def __init__(self, epsilon_c)`
+  - `inspect` (method, line 36) `def inspect(self, weights)`
+  - `__init__` (method, line 63) `def __init__(self, in_features, out_features, sparsity_target)`
+  - `forward` (method, line 70) `def forward(self, x, inject_lies)`
+  - `apply_black_swan_refraction` (method, line 87) `def apply_black_swan_refraction(self)`
+  - `__init__` (method, line 109) `def __init__(self, sparsity_target)`
+  - `forward` (method, line 117) `def forward(self, x, inject_lies)`
+  - `__init__` (method, line 133) `def __init__(self, model, device)`
+  - `train_epoch` (method, line 139) `def train_epoch(self, dataloader, epoch)`
+
+
+Next: [KB_root_p3.md](KB_root_p3.md)
